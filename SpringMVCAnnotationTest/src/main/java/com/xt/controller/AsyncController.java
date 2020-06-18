@@ -28,12 +28,14 @@ public class AsyncController {
         return deferredResult;
     }
 
+    // 监听订单，真正处理订单
     @ResponseBody
     @RequestMapping("/create")
     public String create() {
         // 创建订单
         String order = UUID.randomUUID().toString();
         DeferredResult<Object> deferredResult = DeferredResultQueue.get();
+        // 设置了订单，/createOrder响应就会立即返回
         deferredResult.setResult(order);
         return "success==>" + order;
     }
@@ -43,7 +45,7 @@ public class AsyncController {
      * 2、Spring异步处理，将Callable 提交到 TaskExecutor 使用一个隔离的线程进行执行
      * 3、DispatcherServlet和所有的Filter退出web容器的线程，但是response 保持打开状态；
      * 4、Callable返回结果，SpringMVC将请求重新派发给容器，恢复之前的处理；
-     * 5、根据Callable返回的结果。SpringMVC继续进行视图渲染流程等（从收请求-视图渲染）。
+     * 5、根据Callable返回的结果。SpringMVC继续进行视图渲染流程等（从收请求->视图渲染）。
      *
      * preHandle.../springmvc-annotation/async01
      主线程开始。。http-nio-8080-exec-7=>1572405244094
@@ -56,7 +58,7 @@ public class AsyncController {
      ================Callable执行完成==========
 
      ================再次收到之前重发过来的请求========
-     preHandle.../springmvc-annotation/async
+     preHandle.../springmvc-annotation/async01
      postHandle...（Callable的之前的返回值就是目标方法的返回值）
      afterCompletion...
 

@@ -34,9 +34,9 @@ public class MainConfig2 {
      * session : 同一个 session 创建一个实例
      *
      * ConfigurableBeanFactory#SCOPE_PROTOTYPE
-     * 	 * @see ConfigurableBeanFactory#SCOPE_SINGLETON
-     * 	 * @see org.springframework.web.context.WebApplicationContext#SCOPE_REQUEST  request
-     * 	 * @see org.springframework.web.context.WebApplicationContext#SCOPE_SESSION	 session
+     * ConfigurableBeanFactory#SCOPE_SINGLETON
+     * org.springframework.web.context.WebApplicationContext#SCOPE_REQUEST  request
+     * org.springframework.web.context.WebApplicationContext#SCOPE_SESSION	 session
      *
      * @Lazy ：懒加载
      *      单实例 bean ：默认在容器启动的时候创建对象
@@ -44,7 +44,7 @@ public class MainConfig2 {
      *
      * @return
      */
-//    @Scope("prototype")
+    @Scope("prototype")
     @Lazy
     @Bean
     public Person person() {

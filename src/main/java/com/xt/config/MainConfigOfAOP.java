@@ -78,7 +78,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
  *                              2) applyBeanPostProcessorsBeforeInitialization(): 应用后置处理器的 postProcessBeforeInitialization（）
  *                              3) invokeInitMethods(): 执行自定义的初始化方法
  *                              4）applyBeanPostProcessorsAfterInitialization()；执行后置处理器的 postProcessAfterInitialization（）
- *                          4）、BeanPostProcessor(AnnotationAwareAspectJAutoProxyCreator)创建成功；--》aspectJAdvisorsBuilder
+ *                          4）BeanPostProcessor(AnnotationAwareAspectJAutoProxyCreator)创建成功；--》aspectJAdvisorsBuilder
  *                              advisorRetrievalHelper
  *                  7）、把 BeanPostProcessor 注册到 BeanFactory 中；
  *  				    beanFactory.addBeanPostProcessor(postProcessor);

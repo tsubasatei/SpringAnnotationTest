@@ -14,7 +14,7 @@ public class IOCTest_AOP {
         AnnotationConfigApplicationContext ioc = new AnnotationConfigApplicationContext(MainConfigOfAOP.class);
         MathCalculator mathCalculator = ioc.getBean(MathCalculator.class);
         System.out.println(mathCalculator);
-        mathCalculator.div(12, 0);
+        mathCalculator.div(12, 2);
 
         ioc.close();
     }
