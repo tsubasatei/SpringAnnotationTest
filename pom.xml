@@ -10,7 +10,7 @@
 
     <properties>
         <spring.version>5.2.7.RELEASE</spring.version>
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13.1</junit.version>
         <annotation-api.version>1.3.2</annotation-api.version>
         <c3p0.version>0.9.5.2</c3p0.version>
         <mysql.veersion>8.0.15</mysql.veersion>
